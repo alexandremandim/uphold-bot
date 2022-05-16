@@ -1,0 +1,31 @@
+services:
+  uphold-bot:
+    build: 
+      context: .
+    environment:
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST=postgres
+    networks:
+      - uphold_pg_net
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_USER=$POSTGRES_USER
+      - $POSTGRES_PORT:5432
+    volumes:
+      - pg_vol:/var/lib/postgresql/data
+      - "./scripts/postgresql/create-database.sql:/docker-entrypoint-initdb.d/1.sql"
+
+    networks:
+      - uphold_pg_net
+
+volumes:
+  pg_vol:
+    external: false
+
+networks:
+  uphold_pg_net: {}

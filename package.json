@@ -1,0 +1,25 @@
+{
+    "name": "uphold-bot",
+    "version": "1.0.0",
+    "description": "Assessment challenge",
+    "main": "src/main.js",
+    "private": true,
+    "scripts": {
+        "start": "node src/main.js",
+        "test": "NODE_ENV= jest",
+        "createdb": "psql -h $POSTGRES_HOST -U $POSTGRES_USER -p $POSTGRES_PORT -a -q -f './scripts/postgresql/create-database.sql'"
+    },
+    "author": {
+        "name": "Alexandre Silva",
+        "email": "mandimagc@gmail.com",
+        "url": "https://www.alexsilva.xyz/"
+    },
+    "repository": "",
+    "dependencies": {
+        "axios": "^0.27.2",
+        "commander": "^9.2.0",
+        "dotenv": "^16.0.1",
+        "jest": "^28.1.0",
+        "pg": "^8.7.3"
+    }
+}
