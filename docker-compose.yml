@@ -19,7 +19,8 @@ services:
     volumes:
       - pg_vol:/var/lib/postgresql/data
       - "./scripts/postgresql/create-database.sql:/docker-entrypoint-initdb.d/1.sql"
-
+    ports:
+      - $POSTGRES_PORT:5432
     networks:
       - uphold_pg_net
 
