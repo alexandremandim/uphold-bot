@@ -11,10 +11,11 @@ This application persist information in a postgresql database. In order to execu
   - Environment variables can be defined directly in terminal or .env file
   - POSTGRES_HOST, POSTGRES_USER, POSTGRES_PORT, POSTGRES_PASSWORD
 - Execute `npm run createdb` to create a database and a table in PostgreSQL server
+- Execute `npm install` to install dependencies
 
 ### **Execute bot from docker containers**
 
-If you want to execute with docker containers you just **need to define environment variables**. PostgreSQL server and database/table creation are docker's responsibility
+If you want to execute with docker containers you just **need to define some environment variables**. PostgreSQL server and database/table creation are docker's responsibility
 
 - Environment variables needed: POSTGRES_USER, POSTGRES_PASSWORD
 
@@ -40,6 +41,6 @@ Create and start postgres and bot containers:
 
 ---
 
-## Run tests
+## Run tests in terminal
 
 `npm run test`
